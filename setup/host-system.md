@@ -58,14 +58,20 @@ This section defines how the host's resources will be distributed across the lab
 - Storage: <20-40 GB>  
 - Network Adapters: LAN
 
+### Kali attacker VM
+- vCPUs: <1-2>
+- RAM: <4GB>
+- Storage: <80GB>
+- Network Adapters: LAN
+
 ***Total planned resource usage:***
-CPU usage: <4-6>
-RAM usage: <7 GB>
-Storage: <68-110 GB>
+CPU usage: <5-7>
+RAM usage: <11 GB>
+Storage: <148-190 GB>
 ***Expected remaining for host:*** 
-vCPU: <10-12>
-RAM: <9 GB>
-Storage: <890 GB>
+vCPU: <8-10>
+RAM: <5 GB>
+Storage: <810 GB>
 
 ## 4. Virtual Network Planning
 
