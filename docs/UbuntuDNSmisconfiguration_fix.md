@@ -1,0 +1,8 @@
+# DNS misconfiguration fix
+The issue with Ubuntu’s internet connectivity was caused by an incorrect DNS configuration. Routing worked correctly, which was confirmed by the ability to ping external IP addresses such as 8.8.8.8. However, DNS resolution failed, and the system could not resolve domain names. The root cause was a malformed netplan YAML configuration file. YAML is sensitive to indentation, and the nameservers block had incorrect spacing, causing netplan apply to fail silently. When this happens, Ubuntu falls back to the systemd-resolved stub resolver at 127.0.0.53, which does not forward DNS queries properly in this setup.
+
+Additionally, the file permissions on the netplan configuration were too open, which generated warnings and prevented the system from treating the file as a valid configuration source. Because the netplan file was invalid, Ubuntu continued using the incorrect DNS configuration even though the gateway and IP address were properly set.
+
+The solution was to overwrite the netplan file with a correctly formatted configuration that explicitly defined the static IP address, gateway (192.168.10.1), and DNS servers (192.168.10.1 and 1.1.1.1). Correct file permissions were applied so that netplan would accept the configuration. After applying the configuration and restarting the DNS resolver, Ubuntu immediately began using the proper DNS servers. Verification through resolv.conf showed the correct nameserver entries, and DNS resolution worked normally again.
+
+This approach ensures that Ubuntu consistently uses pfSense as its DNS forwarder, and prevents future failures caused by incorrect indentation or fallback behavior in systemd-resolved.
