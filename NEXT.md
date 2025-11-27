@@ -1,4 +1,2 @@
-I'm setting up the IP addresses on each VM. 
-Right now I can't ping anything
-I also seem to have multiple gateways
-I had the GPT chat titled "NEtwork setup in VirtualBox" up when ending the session
+I've finished all firewall rules for all VMs. I discussed with chatgpt about common rules. title "Check Kali gateway"
+Next step should be SIEM implementation and see that the correct rules are logged in pfSense.
