@@ -55,7 +55,7 @@ This section defines how the host's resources will be distributed across the lab
 ### Ubuntu Server VM
 - vCPUs: <1-2> 
 - RAM: <2 GB>  
-- Storage: <20-40 GB>  
+- Storage: <20-50 GB>  
 - Network Adapters: LAN
 
 ### Kali attacker VM
@@ -67,11 +67,11 @@ This section defines how the host's resources will be distributed across the lab
 ***Total planned resource usage:***
 CPU usage: <5-7>
 RAM usage: <11 GB>
-Storage: <148-190 GB>
+Storage: <148-200 GB>
 ***Expected remaining for host:*** 
 vCPU: <8-10>
 RAM: <5 GB>
-Storage: <810 GB>
+Storage: <800 GB>
 
 ## 4. Virtual Network Planning
 
